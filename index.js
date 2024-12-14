@@ -20,13 +20,13 @@ app.use(morgan('tiny'));
 
 
 function middleware(req,res,next) {
-req,requestBy ="AR";
+req.requestBy ="AR";
   next();
 }
 
 app.use(middleware);
 app.get('/', (req, res) => {
-console.log("req.requestBt", req,requestBy);
+console.log("req.requestBy", req.requestBy);
   res.status(200).send(task)
 })
 
