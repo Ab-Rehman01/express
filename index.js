@@ -10,8 +10,16 @@ const task = [
 ]
 import express from "express"; 
 const app = express();
-const port = 3000
+const port = 4000
 
+//app
+
+function middleware(req,res,next) {
+  console.log("middleware+>", Date.now());
+  next();
+}
+
+app.use(middleware)
 app.get('/', (req, res) => {
 
   res.status(200).send(task)
