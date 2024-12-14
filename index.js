@@ -18,7 +18,7 @@ const task = [
 //app
 app.use(morgan('tiny'));
 
-
+app.use(express.json());
 function middleware(req,res,next) {
 req.requestBy ="AR";
   next();
